@@ -27,7 +27,7 @@ var (
 func init() {
 	flag.StringVar(&flagFilePath, "file", "problems.csv", "path/to/csv_file")
 	flag.BoolVar(&flagRandom, "random", true, "randomize order of questions")
-	flag.IntVar(&flagTime, "time", 1000, "test duration")
+	flag.IntVar(&flagTime, "time", 10, "test duration")
 	flag.Parse()
 }
 
