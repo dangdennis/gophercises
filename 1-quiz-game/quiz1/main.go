@@ -1,4 +1,3 @@
-// flag, csv, time, os, strings
 package main
 
 import (
