@@ -1,6 +1,10 @@
-package anchor
+package parser
 
-import "golang.org/x/net/html"
+import (
+	"strings"
+
+	"golang.org/x/net/html"
+)
 
 // Anchor contains the key attributes of an anchor tag
 type Anchor struct {
@@ -13,8 +17,8 @@ func FindAnchors(n *html.Node) []Anchor {
 	var anchors []Anchor
 
 	if n.Type == html.ElementNode && n.Data == "a" {
-		text := extractText(n)
-		href := extractAttribute(n, "href")
+		text := strings.TrimSpace(extractText(n))
+		href := strings.TrimSpace(extractAttribute(n, "href"))
 		anchor := Anchor{href, text}
 		anchors = append(anchors, anchor)
 	}

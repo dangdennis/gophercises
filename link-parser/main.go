@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/dangdennis/gophercises/anchor"
+	"github.com/dangdennis/gophercises/link-parser/parser"
 	"golang.org/x/net/html"
 )
 
@@ -20,7 +20,7 @@ func main() {
 	doc, err := html.Parse(r)
 	check(err)
 
-	fmt.Printf("%v", anchor.FindAnchors(doc))
+	fmt.Printf("%v", parser.FindAnchors(doc))
 
 }
 
